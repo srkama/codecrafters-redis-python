@@ -1,7 +1,5 @@
-# Uncomment this to pass the first stage
-import asyncio, socket, threading
-# from impls.with_threads import main
-# from impls.with_async import async_main
+
+import socket, threading
 
 pong = "+PONG\r\n"
 
@@ -23,7 +21,3 @@ def main():
     while True:
         conn, recv = server_socket.accept() # wait for client
         threading.Thread(target=handle_client, args=(conn, recv)).start()
-
-if __name__ == "__main__":
-    main()
-    # asyncio.run(async_main())
